@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "690286829355",
+    "project_id": "fir-cloud-messenging-3c893",
+    "storage_bucket": "fir-cloud-messenging-3c893.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690286829355:android:3bedf7c974cf11fe8eaf6e",
+        "android_client_info": {
+          "package_name": "com.example.firebasecloudmessengingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtl8_6NC--MYQKmrPD2MfFdJKwHNW_0gU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Notification Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 50px;
+        }
+
+        input, textarea {
+            display: block;
+            margin: 0 auto 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0077ff;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remitente de notificaciones push</h1>
+    <form id="send-notification-form">
+        <input type="text" id="token" placeholder="Token del Dispositivo" required>
+        <input type="text" id="title" placeholder="Titulo" required>
+        <textarea id="body" rows="5" placeholder="Cuerpo" required></textarea>
+        <button type="submit">Enviar notificaciones</button>
+    </form>
+    <script>
+        document.getElementById('send-notification-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const token = document.getElementById('token').value;
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+
+            const response = await fetch('/send-notification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token, title, body })
+            });
+
+            if (response.status === 200) {
+                alert('Notificacion Envida Correctamente');
+            } else {
+                alert('Error al Enviar la Notificacion');
+            }
+        });
+    </script>
+</body>
+</html>
